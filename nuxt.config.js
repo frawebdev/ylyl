@@ -33,6 +33,10 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
 
+  router: {
+    middleware: ['auth']
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -41,18 +45,18 @@ export default {
     '@nuxtjs/firebase',
     {
       config: {
-        apiKey: "AIzaSyDOe9lVLhQt8Vo3zPXxMO0nRP1TcTNnpiE",
-        authDomain: "fwd-hub.firebaseapp.com",
-        projectId: "fwd-hub",
-        storageBucket: "fwd-hub.appspot.com",
-        messagingSenderId: "127072509019",
-        appId: "1:127072509019:web:dcacaf6b1098cb1d5b337e"
+        apiKey: "AIzaSyDXk2t3zHI_HkmDesC_h6sEnUSkGrEtlEs",
+        authDomain: "playground-755db.firebaseapp.com",
+        projectId: "playground-755db",
+        storageBucket: "playground-755db.appspot.com",
+        messagingSenderId: "267625066122",
+        appId: "1:267625066122:web:382fb9b6a7e2cf03a90773"
       },
       services: {
         auth: {
           persistence: 'local', 
           initialize: {
-            /* onAuthStateChangedAction: 'onAuthStateChangedAction', */
+            onAuthStateChangedAction: 'onAuthStateChangedAction',
             subscribeManually: false
           },
           ssr: false

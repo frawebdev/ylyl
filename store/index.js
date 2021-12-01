@@ -1,13 +1,18 @@
 import axios from 'axios'
 
 export const state = () => ({
-    joke: null
+    joke: null,
+    user: null
 })
 
 export const mutations = {
     getJoke(state, data) {
         console.log(data)
         state.joke = data
+    },
+
+    SET_USER(state, user) {
+        state.user = user
     }
 }
 
@@ -19,12 +24,17 @@ export const actions = {
             })
     },
 
-    /* async onAuthStateChangedAction(state, { authUser, claims }) {
+    async onAuthStateChangedAction(state, { authUser, claims }) {
         if(!authUser) {
-            state.commit('SET_USER')
+            state.commit('SET_USER', null)
+            this.$router.push('/auth')
         }
         else {
-            
+            const { uid, email } = authUser
+            state.commit('SET_USER', {
+                uid,
+                email
+            })
         }
-    } */
+    }
 }
